@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 
 def linear_regression_MSE(data_x, data_y):
     A = np.vstack([data_x, np.ones(len(data_x))])
-    A_T = A.T
-    A_inv = np.linalg.inv(np.dot(A, A_T))
+    A_inv = np.linalg.inv(np.dot(A, A.T))
 
     k, m = np.dot(np.dot(A_inv, A), data_y)
     print(f"k: {k}, m: {m}")
